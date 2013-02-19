@@ -1,5 +1,8 @@
 source :rubygems
+
 gem 'httparty'
+gem 'oauth2'
+
 group :test do
   gem 'webmock'
   gem 'vcr'
