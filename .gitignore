@@ -1,0 +1,5 @@
+.bundle
+Thumbs.db
+**/Thumbs.db
+.idea/
+.DS_Store
