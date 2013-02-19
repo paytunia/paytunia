@@ -6,3 +6,7 @@ Signal.trap("INT") { exit 1 }
 
 require 'bundler'
 require 'paytunia'
+
+ARGV.each do |command|
+  puts Paytunia::Connection.send(command)
+end

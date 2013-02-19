@@ -1,10 +1,13 @@
 require 'oauth2'
 require 'httparty'
+require 'singleton'
 
 module Paytunia
   class Connection
 
     include Singleton
+
+    include HTTParty
 
     include Paytunia::Api::Order
     include Paytunia::Api::Trading
@@ -16,12 +19,19 @@ module Paytunia
     SITE        = 'https://bitcoin-central.net'
 
     attr_accessor :token
-    attr_accessor :public
+    #attr_accessor :public
 
-    def initialize(credentials)
+    #def initialize()
+    #  @public = HTTParty.new
+    #end
+
+    def get(url)
+      self.class.get(SITE + url).body
+    end
+
+    def connect(credentials)
       client = OAuth2::Client.new(APP_ID, APP_SECRET, site: SITE)
       @token = client.password.get_token(credentials[:username], credentials[:password])
-      @public = Object.new.send(:include, HTTParty)
     end
 
     def self.method_missing(method, *args, &block)
