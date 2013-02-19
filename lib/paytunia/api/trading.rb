@@ -1,17 +1,14 @@
 module Paytunia
-  class Trading
-    include HTTParty
-    base_uri 'https://bitcoin-central.net/api/v1/'
-    basic_auth "email", "password"
+  module Api
+    module Trading
+      def active_trade_orders
+        self.class.get("/trade_orders/active")
+      end
 
-    def active_trade_orders
-      self.class.get("/trade_orders/active")
+      def trade_orders
+        result = self.class.get("/trade_orders")
+        result.collect{|o| Order.new o}
+      end
     end
-
-    def trade_orders
-      result = self.class.get("/trade_orders")
-      result.collect{|o| Order.new o}
-    end
-
   end
 end
