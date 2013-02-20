@@ -1,7 +1,6 @@
 source :rubygems
 
-gem 'httparty'
-gem 'oauth2'
+gem 'paytunia', path: './'
 
 group :test do
   gem 'webmock'
