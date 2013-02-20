@@ -5,16 +5,6 @@ require 'io/console'
 
 module Paytunia
 
-  @@cli = false
-
-  def self.cli
-    @@cli
-  end
-
-  def self.cli!
-    @@cli = true
-  end
-
   class Connection
 
     include Singleton
@@ -39,16 +29,7 @@ module Paytunia
 
     def connect(credentials = nil)
       unless credentials
-        if Paytunia.cli
-          print 'Account ID: '
-          username = $stdin.gets.chomp
-
-          print 'Password: '
-          password = STDIN.noecho { $stdin.gets }.chomp
-          print "\n"
-        else
-          raise 'No credentials provided, unable to request them interactively'
-        end
+        raise 'No credentials provided, unable to request them interactively'
       end
 
       client = OAuth2::Client.new(APP_ID, APP_SECRET,
