@@ -21,9 +21,8 @@ module Paytunia
 
     include HTTParty
 
-    include Paytunia::Api::Order
+    include Paytunia::Api::Account
     include Paytunia::Api::Trading
-    include Paytunia::Api::Ticker
 
     APP_ID      = '6fcf1c32f6e14cd773a7a6640832bdbf83a5b2b8d4382e839c6aff83a8f1bb3b'
     APP_SECRET  = '55554ecad5627f0465034c4a116e59a38d9c3ab272487a18404078ccc0b64798'
@@ -45,7 +44,8 @@ module Paytunia
           username = $stdin.gets.chomp
 
           print 'Password: '
-          password = STDIN.noecho { $stdin.gets; print "\n" }.chomp
+          password = STDIN.noecho { $stdin.gets }.chomp
+          print "\n"
         else
           raise 'No credentials provided, unable to request them interactively'
         end
