@@ -1,8 +1,20 @@
 require 'oauth2'
 require 'httparty'
 require 'singleton'
+require 'io/console'
 
 module Paytunia
+
+  @@cli = false
+
+  def self.cli
+    @@cli
+  end
+
+  def self.cli!
+    @@cli = true
+  end
+
   class Connection
 
     include Singleton
@@ -18,20 +30,32 @@ module Paytunia
 
     SITE        = 'https://bitcoin-central.net'
 
-    attr_accessor :token
-    #attr_accessor :public
-
-    #def initialize()
-    #  @public = HTTParty.new
-    #end
-
     def get(url)
       self.class.get(SITE + url).body
     end
 
-    def connect(credentials)
-      client = OAuth2::Client.new(APP_ID, APP_SECRET, site: SITE)
-      @token = client.password.get_token(credentials[:username], credentials[:password])
+    def token
+      @token ||= connect
+    end
+
+    def connect(credentials = nil)
+      unless credentials
+        if Paytunia.cli
+          print 'Account ID: '
+          username = $stdin.gets.chomp
+
+          print 'Password: '
+          password = STDIN.noecho { $stdin.gets; print "\n" }.chomp
+        else
+          raise 'No credentials provided, unable to request them interactively'
+        end
+      end
+
+      client = OAuth2::Client.new(APP_ID, APP_SECRET,
+        site: SITE,
+        ssl: { ca_file: File.dirname(__FILE__) + '/../../certs/ca-certificates.crt' })
+
+      @token = client.password.get_token(username, password, scope: 'read trade merchant')
     end
 
     def self.method_missing(method, *args, &block)

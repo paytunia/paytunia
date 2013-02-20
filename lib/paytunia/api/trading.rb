@@ -1,13 +1,12 @@
 module Paytunia
   module Api
     module Trading
-      def active_trade_orders
-        self.class.get("/trade_orders/active")
+      def list_active_orders
+        token.get('/api/v1/trade_orders/active').body
       end
 
-      def trade_orders
-        result = self.class.get("/trade_orders")
-        result.collect{|o| Order.new o}
+      def list_orders
+        token.get('/api/v1/trade_orders').body
       end
     end
   end

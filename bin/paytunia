@@ -4,8 +4,9 @@
 # https://twitter.com/mitchellh/status/283014103189053442
 Signal.trap("INT") { exit 1 }
 
-require 'bundler'
 require 'paytunia'
+
+Paytunia.cli!
 
 ARGV.each do |command|
   puts Paytunia::Connection.send(command)
