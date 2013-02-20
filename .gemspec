@@ -1,4 +1,5 @@
--*- encoding: utf-8 -*-
+# coding: utf-8
+
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
@@ -16,8 +17,12 @@ Gem::Specification.new do |s|
 
  s.required_rubygems_version = '>= 1.3.6'
 
+ s.add_dependency 'oauth2', '~> 0.9.0'
+ s.add_dependency 'httparty'
+
  s.add_development_dependency 'rspec'
 
  s.files        = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md)
+ s.executables  = ['paytunia']
  s.require_path = 'lib'
 end
