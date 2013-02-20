@@ -5,17 +5,8 @@ describe Paytunia::Ticker do
     "Yay! I'm the king".must_be_instance_of String
   end
 
-  describe "default configuration" do
-    it "must include httparty methods" do
-      Paytunia::Ticker.must_include HTTParty
-    end
-    it "must have the base url set to the Dribble API endpoint" do
-      Paytunia::Ticker.base_uri.must_equal 'https://bitcoin-central.net/api/v1'
-    end
-  end
-
   describe "GET Ticker informations" do
-    let(:ticker) { Paytunia::Ticker.new }
+    let(:ticker) {Paytunia::Connection.get_ticker }
     before do
       VCR.insert_cassette 'ticker', :record => :new_episodes
     end
@@ -23,9 +14,9 @@ describe Paytunia::Ticker do
       VCR.eject_cassette
     end
 
-    ##uncomment to record new ficture
+    ##uncomment to record new cassette-fixture
     #it "records the fixture with VRC gem" do
-    #  Paytunia::Ticker.get('/ticker')
+    #  Paytunia::Connection.get_ticker
     #end
 
     it "must have all method" do
@@ -35,17 +26,18 @@ describe Paytunia::Ticker do
 
     end
 
-    it "must perform the request and get the correct datas" do
-      ticker.high.must_equal 21.5
-      ticker.low.must_equal 19.8
-      ticker.volume.must_equal 802.24639442
-      ticker.bid.must_equal 20.50004
-      ticker.ask.must_equal 20.89946
-      ticker.midpoint.must_equal 20.69975
-      ticker.at.must_equal 1361223350
-      ticker.price.must_equal 20.8995
-      ticker.variation.must_equal 2.0483
-      ticker.currency.must_equal "eur"
+    it "must perform the request and get the correct datas format" do
+      %w(high low volume bid ask midpoint price variation).each do |method|
+        print ticker.send(method)
+        ticker.send(method).must_be_instance_of Float
+      end
+      ticker.at.must_be_instance_of Fixnum
+      ticker.currency.must_be_instance_of String
+
+      #some test value from the cassette, to be change if the cassette is recorded again
+      ticker.low.must_equal 21.701
+      ticker.high.must_equal 23.99
+
     end
   end
 end

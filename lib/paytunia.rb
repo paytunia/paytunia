@@ -3,3 +3,4 @@ Dir[File.dirname(__FILE__) + '/paytunia/api/**.rb'].each do |file|
 end
 
 require 'paytunia/connection'
+require 'paytunia/ticker'

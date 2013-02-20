@@ -27,28 +27,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"66d8dc386ec4023fe30903cbfc735a6c"'
+      - ! '"2bf6c9d83783e415f363ebccfeb1cdf1"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - bc-session=15ace3880e9a2e1bf057b1a26330d356; path=/; expires=Tue, 19-Feb-2013
-        22:12:59 GMT; secure; HttpOnly
+      - bc-session=43aadcc2a8856569fb4fff3d9f87a54f; path=/; expires=Thu, 21-Feb-2013
+        23:18:25 GMT; secure; HttpOnly
       X-Request-Id:
-      - 05bbcce75673b829d73ba8f9ea22edcd
+      - b1199e09d3bb16d98a455b900f3f889e
       X-Runtime:
-      - '0.008511'
+      - '0.004150'
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4996'
+      - '4995'
       Date:
-      - Mon, 18 Feb 2013 22:12:59 GMT
+      - Wed, 20 Feb 2013 23:18:25 GMT
       X-Rack-Cache:
       - miss
       Server:
       - nginx/1.0.15 + Phusion Passenger 3.0.11 (mod_rails/mod_rack)
     body:
       encoding: US-ASCII
-      string: ! '{"high":21.5,"low":19.8,"volume":802.24639442,"bid":20.50004,"ask":20.89946,"midpoint":20.69975,"at":1361223350,"price":20.8995,"variation":2.0483,"currency":"eur"}'
+      string: ! '{"high":23.99,"low":21.701,"volume":668.6614328,"bid":22.53004,"ask":22.99966,"midpoint":22.76485,"at":1361401231,"price":22.53,"variation":2.4093,"currency":"eur"}'
     http_version: 
-  recorded_at: Mon, 18 Feb 2013 22:13:00 GMT
+  recorded_at: Wed, 20 Feb 2013 23:18:24 GMT
+recorded_with: VCR 2.4.0

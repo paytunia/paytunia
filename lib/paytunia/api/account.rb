@@ -4,7 +4,7 @@ module Paytunia
 
       # Returns the list of account operations
       def get_ledger
-        token.get('/api/v1/account_operations').body
+        token.get('account_operations').body
       end
 
     end
