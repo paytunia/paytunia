@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bitcoin-central.net/api/v1/trade_orders
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '200'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.11
+      Strict-Transport-Security:
+      - max-age=31536000
+      Pagination:
+      - ! '{"total":37,"total_pages":2,"first_page":true,"last_page":false,"previous_page":null,"next_page":2,"offset":0}'
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"9abda705faca1718e4109e2efa88d75f"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - af49c64f8c290606ae59268ab7bef2ff
+      X-Runtime:
+      - '0.727238'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4920'
+      Date:
+      - Mon, 25 Feb 2013 12:43:59 GMT
+      X-Rack-Cache:
+      - miss
+      Server:
+      - nginx/1.0.15 + Phusion Passenger 3.0.11 (mod_rails/mod_rack)
+    body:
+      encoding: US-ASCII
+      string: ! '[{"uuid":"62393532-6538-3632-6466-663034646465","instructed_amount":1.0,"amount":0.0,"currency":"EUR","state":"filled","created_at":"2013-01-11T11:56:01Z","updated_at":"2013-01-11T11:56:22Z","price":null,"type":"sell"},{"uuid":"62373734-3465-3733-3766-346563333364","instructed_amount":2.0,"amount":1.02366092,"currency":"EUR","state":"canceled","created_at":"2013-01-11T11:57:31Z","updated_at":"2013-01-11T11:58:00Z","price":null,"type":"buy"},{"uuid":"63633463-3230-6662-3264-646637326363","instructed_amount":1.0,"amount":0.0,"currency":"EUR","state":"filled","created_at":"2013-01-11T12:00:48Z","updated_at":"2013-01-11T12:00:58Z","price":null,"type":"sell"},{"uuid":"64333563-6365-3134-3863-633134333535","instructed_amount":1.0,"amount":0.02366134,"currency":"EUR","state":"canceled","created_at":"2013-01-11T12:01:10Z","updated_at":"2013-01-11T12:01:43Z","price":null,"type":"buy"},{"uuid":"34396361-3564-3835-3230-656237663133","instructed_amount":10.0,"amount":0.0,"currency":"EUR","state":"filled","created_at":"2013-01-11T17:26:56Z","updated_at":"2013-01-11T17:27:18Z","price":null,"type":"sell"},{"uuid":"35643438-6163-6163-6337-366362353735","instructed_amount":12.0,"amount":2.16548128,"currency":"EUR","state":"canceled","created_at":"2013-01-11T17:28:47Z","updated_at":"2013-01-11T17:29:29Z","price":null,"type":"buy"},{"uuid":"61623539-6130-3163-3663-633363366365","instructed_amount":1.0,"amount":1.0,"currency":"EUR","state":"canceled","created_at":"2013-01-14T10:36:14Z","updated_at":"2013-01-14T10:36:38Z","price":10.78,"type":"sell"},{"uuid":"63376538-3964-3632-6664-646533323235","instructed_amount":5.0,"amount":0.0,"currency":"EUR","state":"filled","created_at":"2013-01-15T09:57:00Z","updated_at":"2013-01-15T09:57:02Z","price":10.67245782,"type":"sell"},{"uuid":"39656337-3939-3064-3233-333733623831","instructed_amount":150.0,"amount":150.0,"currency":"EUR","state":"canceled","created_at":"2013-01-15T21:15:23Z","updated_at":"2013-01-16T11:13:02Z","price":11.18,"type":"sell"},{"uuid":"33316265-3661-6133-3431-356335306434","instructed_amount":10.0,"amount":5.32969772,"currency":"EUR","state":"canceled","created_at":"2013-01-15T21:16:03Z","updated_at":"2013-01-16T11:13:01Z","price":10.92,"type":"buy"},{"uuid":"66376535-6530-3333-3066-306332363439","instructed_amount":1.0,"amount":0.9999998,"currency":"EUR","state":"canceled","created_at":"2013-01-17T09:09:50Z","updated_at":"2013-01-17T09:10:58Z","price":11.45,"type":"buy"},{"uuid":"64353133-6334-3666-3934-333132376235","instructed_amount":0.0001,"amount":0.0,"currency":"EUR","state":"filled","created_at":"2013-01-17T09:11:57Z","updated_at":"2013-01-17T09:11:58Z","price":11.111,"type":"sell"},{"uuid":"34616136-6565-6635-3230-663534386561","instructed_amount":100.0,"amount":0.0,"currency":"EUR","state":"filled","created_at":"2013-01-19T22:34:21Z","updated_at":"2013-01-20T10:54:12Z","price":11.8499,"type":"sell"},{"uuid":"37616166-3763-3465-3936-343466363364","instructed_amount":110.0,"amount":110.0,"currency":"EUR","state":"canceled","created_at":"2013-01-21T15:16:19Z","updated_at":"2013-01-24T09:58:15Z","price":11.8,"type":"buy"},{"uuid":"12493703-0250-41ca-b2f0-c3369b2c76df","instructed_amount":500.0,"amount":500.0,"currency":"EUR","state":"canceled","created_at":"2013-01-23T06:13:17Z","updated_at":"2013-01-23T21:08:17Z","price":13.98,"type":"sell"},{"uuid":"3a93273f-a15c-443b-ac62-7af1b4b8b437","instructed_amount":500.0,"amount":500.0,"currency":"EUR","state":"canceled","created_at":"2013-01-23T06:13:43Z","updated_at":"2013-01-24T09:58:06Z","price":14.5,"type":"sell"},{"uuid":"c68cb8c5-4d37-4844-8f76-899fd2f8250b","instructed_amount":500.0,"amount":500.0,"currency":"EUR","state":"canceled","created_at":"2013-01-23T06:14:15Z","updated_at":"2013-01-24T09:58:16Z","price":14.98,"type":"sell"},{"uuid":"4e36a7f3-c812-4e4b-a843-d74a552bc750","instructed_amount":150.0,"amount":65.3720315,"currency":"EUR","state":"canceled","created_at":"2013-01-24T09:57:53Z","updated_at":"2013-01-24T13:23:19Z","price":null,"type":"buy"},{"uuid":"e9e8c30b-16d7-4115-8c02-1de40d040457","instructed_amount":0.436424,"amount":0.0,"currency":"EUR","state":"filled","created_at":"2013-01-24T13:17:31Z","updated_at":"2013-01-24T13:29:41Z","price":null,"type":"sell"},{"uuid":"fbe0e960-146a-4459-a82b-9c2f74ded496","instructed_amount":1.0,"amount":0.57569889,"currency":"EUR","state":"canceled","created_at":"2013-01-24T13:30:08Z","updated_at":"2013-01-24T13:30:23Z","price":null,"type":"buy"}]'
+    http_version: 
+  recorded_at: Mon, 25 Feb 2013 12:43:59 GMT
+recorded_with: VCR 2.4.0

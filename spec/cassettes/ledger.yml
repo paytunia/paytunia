@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bitcoin-central.net/api/v1/account_operations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '200'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.11
+      Strict-Transport-Security:
+      - max-age=31536000
+      Pagination:
+      - ! '{"total":1499,"total_pages":75,"first_page":true,"last_page":false,"previous_page":null,"next_page":2,"offset":0}'
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"95887ad735c1537360078c8cec20497d"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ac880203b7aef067761909262b8b3a21
+      X-Runtime:
+      - '2.531592'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4922'
+      Date:
+      - Mon, 25 Feb 2013 12:43:57 GMT
+      X-Rack-Cache:
+      - miss
+      Server:
+      - nginx/1.0.15 + Phusion Passenger 3.0.11 (mod_rails/mod_rack)
+    body:
+      encoding: US-ASCII
+      string: ! '[{"uuid":"c503b258-2ad8-49a5-a8c6-b3ecad05ba70","amount":5.2,"currency":"EUR","state":null,"created_at":"2013-02-25T00:06:37+01:00","type":"invoice_credit","balance":2341.15630267},{"uuid":"52cbd031-f66a-4237-8094-3e6346f0a39a","amount":-20.0,"currency":"EUR","state":"processed","created_at":"2013-02-24T22:26:40+01:00","type":"email_transfer","balance":2335.95630267},{"uuid":"ef39e16d-940c-4182-901e-0e30cce4228f","amount":-50.99,"currency":"EUR","state":"processed","created_at":"2013-02-14T10:51:14+01:00","type":"wire_transfer","balance":2355.95630267},{"uuid":"9a384daa-ae5d-4868-a916-51064ba3175f","amount":2.721765,"currency":"BTC","state":null,"created_at":"2013-02-08T10:21:14+01:00","type":"trade","balance":1496.74592872},{"uuid":"16ea1fb7-e252-4e51-b2fe-25c24b6c7f53","amount":-43.33022662,"currency":"EUR","state":null,"created_at":"2013-02-08T10:21:14+01:00","type":"trade","balance":2406.94630267},{"uuid":"20df7656-f6e7-49eb-bdd9-2611287274bb","amount":10.17725,"currency":"BTC","state":null,"created_at":"2013-02-08T03:28:21+01:00","type":"trade","balance":1494.02416372},{"uuid":"b5b554b7-b217-4949-adb0-38aa572e8d84","amount":-162.02080228,"currency":"EUR","state":null,"created_at":"2013-02-08T03:28:20+01:00","type":"trade","balance":2450.27652929},{"uuid":"edfe1768-e3cf-4efc-a2fa-060d5ccbd4b0","amount":15.95231061,"currency":"BTC","state":null,"created_at":"2013-02-08T00:52:01+01:00","type":"trade","balance":1483.84691372},{"uuid":"cf595ab7-e526-4a55-a034-1e12c105306b","amount":-253.95918968,"currency":"EUR","state":null,"created_at":"2013-02-08T00:52:00+01:00","type":"trade","balance":2612.29733157},{"uuid":"2c369c2a-8cbb-419e-a44d-fbd43ae95e22","amount":1.50962,"currency":"BTC","state":null,"created_at":"2013-02-07T20:29:09+01:00","type":"trade","balance":1467.89460311},{"uuid":"624e8b97-588c-4d85-adb2-1085c4c5552f","amount":-24.03299944,"currency":"EUR","state":null,"created_at":"2013-02-07T20:29:09+01:00","type":"trade","balance":2866.25652125},{"uuid":"f890bce6-c234-4b93-8a07-4f374083a488","amount":0.93342281,"currency":"BTC","state":null,"created_at":"2013-02-07T20:15:48+01:00","type":"trade","balance":1466.38498311},{"uuid":"a59b7a75-56c5-4a37-ab60-52dbe2432219","amount":-14.85999779,"currency":"EUR","state":null,"created_at":"2013-02-07T20:15:48+01:00","type":"trade","balance":2890.28952069},{"uuid":"e44c6651-8a8b-4ee4-b1a5-9afc4dd4ec46","amount":-4.00239059,"currency":"BTC","state":null,"created_at":"2013-02-07T15:26:10+01:00","type":"trade","balance":1465.4515603},{"uuid":"d0cfcd46-0556-4296-b72e-defdc5b9b65a","amount":63.99782529,"currency":"EUR","state":null,"created_at":"2013-02-07T15:26:09+01:00","type":"trade","balance":2905.14951848},{"uuid":"23f42eee-9a3c-45e6-b695-3a5c9076382b","amount":-177.68414394,"currency":"BTC","state":null,"created_at":"2013-02-07T15:20:28+01:00","type":"trade","balance":1469.45395089},{"uuid":"a5fcfb4e-4443-473c-9a56-7fc19dc2d7d0","amount":2841.15169319,"currency":"EUR","state":null,"created_at":"2013-02-07T15:20:28+01:00","type":"trade","balance":2841.15169319},{"uuid":"22aed96c-976f-478c-a5b3-19f9b457c759","amount":-10.0,"currency":"BTC","state":"processed","created_at":"2013-02-05T12:47:00+01:00","type":"bitcoin_transfer","balance":1647.13809483},{"uuid":"73421832-4906-465e-9fee-fcd71b46357b","amount":3.67254699,"currency":"BTC","state":null,"created_at":"2013-02-03T01:50:51+01:00","type":"trade","balance":1657.13809483},{"uuid":"de667991-441b-4886-ac8d-33322909df26","amount":-52.95849485,"currency":"EUR","state":null,"created_at":"2013-02-03T01:50:51+01:00","type":"trade","balance":0.0}]'
+    http_version: 
+  recorded_at: Mon, 25 Feb 2013 12:43:57 GMT
+recorded_with: VCR 2.4.0
