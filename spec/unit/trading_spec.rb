@@ -18,6 +18,8 @@ describe 'Trading' do
         ticker.send(method).should be_an_instance_of BigDecimal
       end
 
+      puts ticker.at.class.to_s
+
       ticker.at.should be_an_instance_of Fixnum
       ticker.currency.should eq 'EUR'
     end
