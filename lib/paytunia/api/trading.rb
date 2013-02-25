@@ -3,17 +3,17 @@ module Paytunia
 
     # Returns the active trade orders (pending_execution, active, or insufficient_funds)
     def list_active_orders
-      token.get('/trade_orders/active').body
+      account.get('/trade_orders/active')
     end
 
-    # Returns all orders, ever
+    # Returns a paginated list of orders
     def list_orders
-      token.get('/trade_orders').body
+      account.get('/trade_orders')
     end
 
     # Returns the ticker
     def get_ticker
-      Ticker.new get('/ticker')
+      Ticker.new(get('/ticker'))
     end
 
   end
