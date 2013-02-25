@@ -32,6 +32,8 @@ VCR.configure do |c|
   # Matches authenticated requests regardless of their Basic auth string (https://user:pass@domain.tld)
   c.register_request_matcher :anonymized_uri do |request_1, request_2|
     (URI(request_1.uri).port == URI(request_2.uri).port) &&
-      URI(request_1.uri).path == URI(request_2.uri).path
+      (URI(request_1.uri).path == URI(request_2.uri).path) &&
+      (URI(request_1.uri).host == URI(request_2.uri).host) &&
+      (URI(request_1.uri).query == URI(request_2.uri).query)
   end
 end
