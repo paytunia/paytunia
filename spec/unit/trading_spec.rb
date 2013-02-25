@@ -7,6 +7,10 @@ describe 'Trading' do
       VCR.use_cassette('ticker') { Paytunia.get_ticker }
     end
 
+    it 'must be an instance of Ticker' do
+      ticker.should be_an_instance_of Paytunia::Api::Ticker
+    end
+
     it 'must respond to all methods' do
       %w(high low volume bid ask midpoint at price variation currency).each do |method|
         ticker.should respond_to(method)

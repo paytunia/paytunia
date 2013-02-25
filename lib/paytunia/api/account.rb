@@ -3,7 +3,9 @@ module Paytunia
 
     # Returns the list of account operations
     def get_ledger
-      account.get('/account_operations')
+      account.get('/account_operations').map do |ao|
+        AccountOperation.new(ao)
+      end
     end
 
   end

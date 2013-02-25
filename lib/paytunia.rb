@@ -1,3 +1,4 @@
+require File.dirname(__FILE__) + '/paytunia/models/base.rb'
 Dir.glob(File.dirname(__FILE__) + '/paytunia/**/*.rb').each { |file| require file }
 
 # Override HTTParty's default JSON parser with monkeypatched pure parser

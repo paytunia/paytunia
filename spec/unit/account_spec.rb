@@ -10,7 +10,7 @@ describe 'Paytunia::Api.get_ledger' do
 
   it 'must return the ledger' do
     ledger.should be_an_instance_of Array
-    ledger.last['balance'].should be_an_instance_of BigDecimal
+    ledger.last.balance.should be_an_instance_of BigDecimal
   end
 
 end
