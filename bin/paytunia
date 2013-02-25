@@ -1,46 +1,16 @@
 #!/usr/bin/env ruby
 
-#-----------------------------------------------------------------------------
-# To use interactive mode :
-# bundle exec paytunia email(optional) password(optional) command(optional)
-#-----------------------------------------------------------------------------
-
-
 # Trap interrupts to quit cleanly. See
 # https://twitter.com/mitchellh/status/283014103189053442
 Signal.trap("INT") { exit 1 }
 
-
 require 'paytunia'
-  print '-----------------------------------------------------------------------------'
-  print "\n"
-  print 'Welcome to the paytunia interractive API'
-  print "\n"
-  print 'Please send your donation to this address: 1CBsJdesESEAqPxoeFHxrcPM4obqgDX2nv'
-  print "\n"
-  print '-----------------------------------------------------------------------------'
-  print "\n"
-  print "\n"
 
+print "Account ID : "
+username = $stdin.gets.chomp
 
-  print "Account ID: #{ARGV[0]}"
-  username = ARGV[0] || $stdin.gets.chomp
-  print "\n"
+print "Password   : "
+password =  STDIN.noecho { $stdin.gets }.chomp
+print "\n"
 
-  print "Password: #{ARGV[1]}"
-  password =  ARGV[1] || STDIN.noecho { $stdin.gets }.chomp
-  print "\n"
-
-  command = ARGV[2]
-  while true
-
-    if command
-      puts Paytunia::Connection.send(command)
-      command = nil
-    else
-      print 'Type your command: '
-      command = $stdin.gets.chomp
-    end
-
-  end
-
+puts Paytunia::Connection.send(ARGV[0])
