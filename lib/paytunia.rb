@@ -1,6 +1,12 @@
-Dir[File.dirname(__FILE__) + '/paytunia/api/**.rb'].each do |file|
-  require file
-end
+Dir.glob(File.dirname(__FILE__) + '/paytunia/**/*.rb').each { |file| require file }
 
-require 'paytunia/connection'
-require 'paytunia/ticker'
+# Override HTTParty's default JSON parser
+require 'oj'
+
+module HTTParty
+  class Parser
+    def json
+      Oj.load(body)
+    end
+  end
+end
