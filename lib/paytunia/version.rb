@@ -1,5 +1,5 @@
 module Paytunia
 
-  VERSION = '0.1alpha'
+  VERSION = '0.1.1-alpha'
 
 end
