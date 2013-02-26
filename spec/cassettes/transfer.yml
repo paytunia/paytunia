@@ -1,12 +1,18 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://bitcoin-central.net/api/v1/ticker
+    method: post
+    uri: https://bitcoin-central.net/api/v1/transfers/send_bitcoins
     body:
       encoding: US-ASCII
-      string: ''
-    headers: {}
+      string: ! '{"amount":"0.1E1","address":"1DavouTAsveznCFHsz688xvbrRAq4u2qm8"}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
@@ -27,26 +33,26 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"7e6b6a4c936a011f0451cf977774d3fe"'
+      - ! '"c565cf461e64027759a718b7b596892d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 34548f1e908faa97bf6a5a1afc47b2cf
+      - c0db1d03d46cb666427623c3a15de4f5
       X-Runtime:
-      - '0.007823'
+      - '13.067759'
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4994'
+      - '4990'
       Date:
-      - Tue, 26 Feb 2013 07:06:13 GMT
+      - Tue, 26 Feb 2013 07:53:48 GMT
       X-Rack-Cache:
-      - miss
+      - invalidate, pass
       Server:
       - nginx/1.0.15 + Phusion Passenger 3.0.11 (mod_rails/mod_rack)
     body:
       encoding: US-ASCII
-      string: ! '{"high":24.79,"low":23.4,"volume":438.72442952,"bid":24.1,"ask":24.68966,"midpoint":24.39483,"at":1361859924,"price":24.1,"variation":0.6263,"currency":"EUR"}'
+      string: ! '{"uuid":"e71c617a-b266-47df-8607-630f34feda4d"}'
     http_version: 
-  recorded_at: Tue, 26 Feb 2013 07:06:14 GMT
+  recorded_at: Tue, 26 Feb 2013 07:53:49 GMT
 recorded_with: VCR 2.4.0

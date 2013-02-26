@@ -37,3 +37,10 @@ VCR.configure do |c|
       (URI(request_1.uri).query == URI(request_2.uri).query)
   end
 end
+
+# Add valid_uuid? to String
+class String
+  def valid_uuid?
+    self =~ /^([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{2})([0-9a-f]{2})-([0-9a-f]{12})$/
+  end
+end

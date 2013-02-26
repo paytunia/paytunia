@@ -31,26 +31,26 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"817674dda26f53ffa7ff375baca4ba60"'
+      - ! '"98bab175e3caa8e478e5eb4b5d7b81d2"'
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - 9177fcd945ae715bd786c7385cd5f4d8
+      - 6fb81ca651bfe16ec9dff779ef2a50c9
       X-Runtime:
-      - '0.357479'
+      - '0.347918'
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4919'
+      - '4992'
       Date:
-      - Mon, 25 Feb 2013 12:43:59 GMT
+      - Tue, 26 Feb 2013 07:06:15 GMT
       X-Rack-Cache:
       - miss
       Server:
       - nginx/1.0.15 + Phusion Passenger 3.0.11 (mod_rails/mod_rack)
     body:
       encoding: US-ASCII
-      string: ! '[{"uuid":"148ab996-ab63-45cc-b240-99c78bb18a11","instructed_amount":300.0,"amount":268.70563158,"currency":"EUR","state":"active","created_at":"2013-02-07T18:09:44Z","updated_at":"2013-02-24T23:06:39Z","price":15.9199,"type":"buy"}]'
+      string: ! '[{"uuid":"148ab996-ab63-45cc-b240-99c78bb18a11","instructed_amount":300.0,"amount":268.70563158,"currency":"EUR","state":"active","created_at":"2013-02-07T13:09:44-05:00","updated_at":"2013-02-25T11:31:58-05:00","price":15.9199,"type":"buy"}]'
     http_version: 
-  recorded_at: Mon, 25 Feb 2013 12:43:59 GMT
+  recorded_at: Tue, 26 Feb 2013 07:06:16 GMT
 recorded_with: VCR 2.4.0

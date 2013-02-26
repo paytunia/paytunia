@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'oauth2', '~> 0.9.0'
   s.add_dependency 'httparty'
   s.add_dependency 'json_pure'
+  s.add_dependency 'uuidtools'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'vcr'

@@ -8,5 +8,10 @@ module Paytunia
       end
     end
 
+    # Returns a single account operation
+    def get_operation(operation_id)
+      AccountOperation.new(account.get("/account_operations/#{operation_id}"))
+    end
+
   end
 end
