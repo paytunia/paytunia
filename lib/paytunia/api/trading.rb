@@ -16,5 +16,16 @@ module Paytunia
       Ticker.new(get('/ticker'))
     end
 
+    # Returns the full market depth
+    def get_depth(currency = :eur)
+      depth = get("/depth/#{currency}").parsed_response
+
+      %w{ bids asks }.each do |category|
+        depth[category].map! { |order| Depth.new(order) }
+      end
+
+      depth
+    end
+
   end
 end

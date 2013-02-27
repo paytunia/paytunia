@@ -51,4 +51,17 @@ describe 'Trading' do
     end
   end
 
+  describe 'Depth' do
+    let(:depth) do
+      VCR.use_cassette('depth') do
+        Paytunia.get_depth(:usd)
+      end
+    end
+
+    it 'should have two collections of Depth instances' do
+      depth['bids'][0].should be_an_instance_of Paytunia::Api::Depth
+      depth['asks'][0].should be_an_instance_of Paytunia::Api::Depth
+    end
+  end
+
 end

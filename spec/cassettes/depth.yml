@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bitcoin-central.net/api/v1/depth/usd
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '200'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.11
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"c5361a31e90e3f369a2461a59dd51a58"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a59acfccc442445cb8f9501b2f87d763
+      X-Runtime:
+      - '0.098504'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4985'
+      Date:
+      - Wed, 27 Feb 2013 01:05:55 GMT
+      X-Rack-Cache:
+      - miss
+      Server:
+      - nginx/1.0.15 + Phusion Passenger 3.0.11 (mod_rails/mod_rack)
+    body:
+      encoding: US-ASCII
+      string: ! '{"bids":[{"timestamp":1361921530,"price":30.101,"amount":5.618,"currency":"USD"},{"timestamp":1361856446,"price":30.1,"amount":3.0,"currency":"USD"},{"timestamp":1361802345,"price":22.45,"amount":9.0,"currency":"USD"}],"asks":[{"timestamp":1361921639,"price":43.53233718,"amount":67.23,"currency":"USD"}]}'
+    http_version: 
+  recorded_at: Wed, 27 Feb 2013 01:05:55 GMT
+recorded_with: VCR 2.4.0
