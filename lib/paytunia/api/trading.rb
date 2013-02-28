@@ -27,5 +27,32 @@ module Paytunia
       depth
     end
 
+    # Posts a trade order
+    #
+    # ==== Attributes
+    #
+    # * +amount+ - The amount of Bitcoins to buy or sell
+    # * +currency+ - The currency against which to trade
+    # * +type+ - Whether your order is to buy or sell Bitcoins, legal values are +:buy+ and +:sell+
+    # * +price+ - Limit price, creates a market order if omitted
+    #
+    def post_trade_order(amount, currency, type, price = nil)
+
+      if !amount.kind_of?(BigDecimal) || (price && !price.kind_of?(BigDecimal))
+        raise TypeError, "Expected BigDecimal, got #{amount.class.name} instead."
+      end
+
+      unless %w{ eur usd gbp }.include?(currency.to_s.downcase)
+        raise 'Illegal currency'
+      end
+
+      unless %w{ buy sell }.include?(type.to_s.downcase)
+        raise 'Illegal type'
+      end
+
+      TradeOrder.new(account.post('/trade_orders', { amount: amount, currency: currency, type: type, price: price } ))
+
+    end
+
   end
 end

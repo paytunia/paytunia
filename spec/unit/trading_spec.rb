@@ -64,4 +64,38 @@ describe 'Trading' do
     end
   end
 
+  describe 'Trade orders' do
+
+    describe 'successful creation' do
+      let(:response) do
+        VCR.use_cassette('trade_order_creation', match_requests_on: [:method, :anonymized_uri]) do
+          Paytunia.post_trade_order(BigDecimal('10'), 'EUR', :buy, BigDecimal('30'))
+        end
+      end
+
+      it 'should be a trade order' do
+        response.should be_an_instance_of Paytunia::Api::TradeOrder
+        response.state.should eql 'pending_execution'
+        response.amount.should eql BigDecimal('10')
+        response.uuid.should be_a_valid_uuid
+        response.created_at.should be_an_instance_of DateTime
+        response.updated_at.should be_an_instance_of DateTime
+      end
+    end
+
+    describe 'illegal parameters rejection' do
+      it 'should fail if amount is not a BigDecimal' do
+        expect { Paytunia.post_trade_order(10, 'EUR', :sell, 20) }.to raise_error(StandardError, /Expected BigDecimal, got .* instead/)
+      end
+
+      it 'should fail with illegal currency' do
+        expect { Paytunia.post_trade_order(BigDecimal('1'), 'XXX', :sell, BigDecimal('1')) }.to raise_error(StandardError, /Illegal currency/)
+      end
+
+      it 'should fail when the type is illegal' do
+        expect { Paytunia.post_trade_order(BigDecimal('1'), 'EUR', :illegal, BigDecimal('1')) }.to raise_error(StandardError, /Illegal type/)
+      end
+    end
+  end
 end
+
