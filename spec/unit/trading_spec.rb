@@ -96,6 +96,31 @@ describe 'Trading' do
         expect { Paytunia.post_trade_order(BigDecimal('1'), 'EUR', :illegal, BigDecimal('1')) }.to raise_error(StandardError, /Illegal type/)
       end
     end
+
+    describe 'get order' do
+      let(:response) do
+        VCR.use_cassette('get_order', match_requests_on: [:method, :anonymized_uri]) do
+          Paytunia.get_trade_order('148ab996-ab63-45cc-b240-99c78bb18a11')
+        end
+      end
+
+      it 'should return an instance of TradeOrder' do
+        response.should be_an_instance_of Paytunia::Api::TradeOrder
+      end
+    end
+
+    describe 'get trades' do
+      let(:response) do
+        VCR.use_cassette('get_trades', match_requests_on: [:method, :anonymized_uri]) do
+          Paytunia.get_trades_for_order('148ab996-ab63-45cc-b240-99c78bb18a11')
+        end
+      end
+
+      it 'should return an array of Trades' do
+        response.should be_an_instance_of Array
+        response[0].should be_an_instance_of Paytunia::Api::Trade
+      end
+    end
   end
 end
 

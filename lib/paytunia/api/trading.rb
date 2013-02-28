@@ -37,7 +37,6 @@ module Paytunia
     # * +price+ - Limit price, creates a market order if omitted
     #
     def post_trade_order(amount, currency, type, price = nil)
-
       if !amount.kind_of?(BigDecimal) || (price && !price.kind_of?(BigDecimal))
         raise TypeError, "Expected BigDecimal, got #{amount.class.name} instead."
       end
@@ -51,8 +50,26 @@ module Paytunia
       end
 
       TradeOrder.new(account.post('/trade_orders', { amount: amount, currency: currency, type: type, price: price } ))
-
     end
 
+    # Gets a trade order
+    #
+    # ==== Attributes
+    #
+    # * +trade_order_id+ - UUID of the trade order to fetch
+    #
+    def get_trade_order(uuid)
+      TradeOrder.new(account.get("/trade_orders/#{uuid}"))
+    end
+
+    # Gets the trades that happened in relation to a specific order
+    #
+    # ==== Attributes
+    #
+    # * +trade_order_id+ - UUID of the trade order
+    #
+    def get_trades_for_order(uuid)
+      account.get("/trade_orders/#{uuid}/trades").map { |trade| Trade.new(trade) }
+    end
   end
 end
