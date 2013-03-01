@@ -17,7 +17,7 @@ module Paytunia
         end
       end
 
-      def to_json
+      def to_json(*args)
         h = self.class.instance_variable_get(:@attr_list).inject({}) do |memo, att|
           memo[att] = send(att)
           memo
