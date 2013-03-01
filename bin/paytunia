@@ -6,11 +6,4 @@ Signal.trap("INT") { exit 1 }
 
 require 'paytunia'
 
-print "Account ID : "
-username = $stdin.gets.chomp
-
-print "Password   : "
-password =  STDIN.noecho { $stdin.gets }.chomp
-print "\n"
-
-puts Paytunia::Connection.send(ARGV[0])
+puts Paytunia::Connection.send(ARGV[0]).to_json
