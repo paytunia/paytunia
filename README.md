@@ -34,7 +34,7 @@ $ paytunia get_ticker
 ### HTTP Basic
 
 ```ruby
-connection = Paytunia.connect(basic_auth: { username: 'YOUR_USERNAME', password: 'YOUR_PASSWORD')
+connection = Paytunia.connect(basic_auth: { username: 'YOUR_USERNAME', password: 'YOUR_PASSWORD' })
 connection.get_ledger
 ```
 
