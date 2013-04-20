@@ -13,5 +13,11 @@ module Paytunia
       AccountOperation.new(account.get("/account_operations/#{operation_id}"))
     end
 
+    # Returns account balances
+    def get_balances
+      Balances.new(account.get("/balances"))
+    end
+
+
   end
 end
