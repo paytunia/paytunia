@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'webmock'
   s.add_development_dependency 'rake'
 
-  s.files        = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md)
+  s.files        = Dir.glob('{bin,lib,certs}/**/*') + %w(LICENSE README.md)
   s.executables  = ['paytunia']
   s.require_path = 'lib'
 end
